@@ -1,28 +1,38 @@
-import os
+
+#Gestion des JWT
+
 import jwt
+import os
+from flask import request, jsonify
+from functools import wraps
 from datetime import datetime, timedelta
-from flask import Blueprint, request, jsonify
-from werkzeug.security import check_password_hash
-from dotenv import load_dotenv
-from app.models.user import get_user_by_username
 
-load_dotenv()
-SECRET_KEY = os.getenv("SECRET_KEY")
-auth_bp = Blueprint("auth", __name__)
+SECRET_KEY = os.getenv('SECRET_KEY', 'mon_secret_key')
 
-@auth_bp.route("/login", methods=["POST"])
-def login():
-    data = request.get_json()
-    username = data.get("username")
-    password = data.get("password")
+def generate_jwt(user_id, role):
+    payload = {
+        'user_id': user_id,
+        'role': role,
+        'exp': datetime.utcnow() + timedelta(hours=24)
+    }
+    return jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
-    user = get_user_by_username(username)
-    if user and check_password_hash(user.password, password):
-        payload = {
-            "user_id": user.id,
-            "exp": datetime.utcnow() + timedelta(hours=1)
-        }
-        token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
-        return jsonify(token=token)
+def decode_jwt(token):
+    try:
+        return jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
+        return None
 
-    return jsonify({"error": "Identifiants invalides"}), 401
+def token_required(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        token = request.headers.get('Authorization')
+        if not token:
+            return jsonify({'error': 'Token requis'}), 401
+        decoded = decode_jwt(token)
+        if not decoded:
+            return jsonify({'error': 'Token invalide ou expiré'}), 403
+        return f(decoded, *args, **kwargs)
+    return wrapper
