@@ -1,11 +1,26 @@
-from cryptography.fernet import Fernet
+
+#Chiffrement AES de données sensibles
+
+from Crypto.Cipher import AES
+import base64
 import os
 
-FERNET_KEY = os.getenv("FERNET_KEY").encode()
-cipher = Fernet(FERNET_KEY)
+# Clé secrète (doit être 16, 24 ou 32 octets)
+SECRET_KEY = os.getenv('AES_KEY', '16bytessecretkey')
 
-def encrypt_data(data: str) -> str:
-    return cipher.encrypt(data.encode()).decode()
+def pad(s):
+    return s + (16 - len(s) % 16) * chr(16 - len(s) % 16)
 
-def decrypt_data(token: str) -> str:
-    return cipher.decrypt(token.encode()).decode()
+def unpad(s):
+    return s[:-ord(s[len(s) - 1:])]
+
+def encrypt(data):
+    cipher = AES.new(SECRET_KEY.encode('utf-8'), AES.MODE_ECB)
+    padded = pad(data)
+    encrypted = cipher.encrypt(padded.encode('utf-8'))
+    return base64.b64encode(encrypted).decode('utf-8')
+
+def decrypt(data):
+    cipher = AES.new(SECRET_KEY.encode('utf-8'), AES.MODE_ECB)
+    decrypted = cipher.decrypt(base64.b64decode(data))
+    return unpad(decrypted.decode('utf-8'))
