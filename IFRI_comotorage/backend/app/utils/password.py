@@ -1,4 +1,5 @@
 
+# Hachage avec bcrypt
 
 import bcrypt
 
