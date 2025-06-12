@@ -1,6 +1,7 @@
 # PIL1_2425_G33
 Projet Intégrateur IFRI 2024–2025 : IFRI_comotorage
 
+
 🚗 IFRI_comotorage – Projet Intégrateur PIL1_2425_33
 
 🎓 Contexte
@@ -181,5 +182,4 @@ Recherche de profils
 Recherchez et entamez des discussions en naviguant dans la section "Recherche". Servez vous du filtre pour affiner vos recherches.
 
 Récupération de mot de passe
-Cliquez sur le lien <Avez-vous oublié votre mot de passe> sur la page de connexion et recevez un mail de récupération..
-
+Cliquez sur le lien <Avez-vous oublié votre mot de passe> sur la page de connexion et recevez un mail de récupération.
