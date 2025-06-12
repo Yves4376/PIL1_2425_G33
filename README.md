@@ -181,5 +181,5 @@ Recherche de profils
 Recherchez et entamez des discussions en naviguant dans la section "Recherche". Servez vous du filtre pour affiner vos recherches.
 
 Récupération de mot de passe
-Cliquez sur le lien <Avez-vous oublié votre mot de passe> sur la page de connexion et recevez un mail de récupération.
+Cliquez sur le lien <Avez-vous oublié votre mot de passe> sur la page de connexion et recevez un mail de récupération..
 
