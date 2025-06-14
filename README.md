@@ -5,6 +5,7 @@ Projet Intégrateur IFRI 2024–2025 : IFRI_comotorage
 🚗 IFRI_comotorage – Projet Intégrateur PIL1_2425_33
 
 🎓 Contexte
+
 Dans le cadre du projet intégrateur de fin d’année en Licence 1 à l’Institut de Formation et de Recherche en Informatique (IFRI), il nous a été demandé de concevoir une application web fonctionnelle autour d’un besoin concret.
 
 Le projet IFRI_comotorage a pour objectif de favoriser le covoiturage entre les étudiants de l’IFRI, en leur proposant une plateforme web simple, intuitive et sécurisée.
