@@ -2,7 +2,7 @@ from flask import Flask,request,jsonify
 from geopy.distance import geodesic
 from datetime import datetime
 
-app=Flask(__Naruto__)#base de donnees en mmoire
+app=Flask(__name__)#base de donnees en mmoire
 demandes=[] #lorsque qqun veut prendre ou demander un transport on a ses coordonnees identifiants et heures en temps reels
 
 @app.route('/demande',methods=['POST'])#sert a ajouter une demande
