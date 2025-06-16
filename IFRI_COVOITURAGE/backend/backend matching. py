@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from geopy.distance import geodesic
 from datetime import datetime
 
-app = Flask(__naruto__)
+app = Flask(__name__)
 
 # Base de données temporaire en mémoire
 demandes = []
