@@ -33,28 +33,37 @@ SGBD relationnel (MySQL/PostgreSQL recommandé)
 Autres dépendances listées dans requirements.txt
 
 Installation
+
 1. Créer un dossier puis y accéder dans l'éditeur de code
 2. Créer et Activer un environnement virtuel
+3. 
 Sous Windows :
+
 bashpython -m venv mon_env
 .\mon_env\Scripts\activate
+
 Sous Linux :
+
 bashpython3 -m venv mon_env
 source mon_env/bin/activate
-3. Cloner le dépôt
-bash(mon_env) git clone https://github.com/[USERNAME]/PIL1_2425_[NUMERO_DU_GROUPE].git
-4. Naviguer dans le répertoire du projet
-bash(mon_env) cd PIL1_2425_[NUMERO_DU_GROUPE]
-5. Installer les dépendances
+
+4. Cloner le dépôt
+bash(mon_env) https://github.com/Yves4376/PIL1_2425_G33.git
+5. Naviguer dans le répertoire du projet
+
+bash(mon_env) cd PIL1_2425_G33
+
+7. Installer les dépendances
+   
 bash(mon_env) pip install -r requirements.txt
-6. Configurer la base de données dans le fichier config.py ou app.py
+9. Configurer la base de données dans le fichier config.py ou app.py
 Utilisation de MySQL (recommandé) :
 pythonimport os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'votre-secret-key-ici'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'mysql://your_db_user:your_db_password@localhost/ifri_comotorage_db'
+        'mysql://your_db_user:your_db_password@localhost/ifri_covoiturage_db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 Utilisation de PostgreSQL :
 pythonclass Config:
@@ -63,7 +72,9 @@ pythonclass Config:
         'postgresql://your_db_user:your_db_password@localhost/ifri_comotorage_db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 7. Initialiser la base de données
+
 bash(mon_env) python app.py init-db
+
 ou si vous utilisez Flask-Migrate :
 bash(mon_env) flask db init
 (mon_env) flask db migrate -m "Initial migration"
