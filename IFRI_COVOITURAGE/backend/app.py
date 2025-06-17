@@ -14,7 +14,7 @@ app.register_blueprint(chat_bp, url_prefix='/api')
 app.register_blueprint(matching_bp, url_prefix='/api')
 
 if _name_ == '_main_':
-    app.run(debug=True) """
+    app.run(debug=True) 
 
 
 
@@ -63,3 +63,38 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+
+"""
+
+
+
+from flask import Flask
+from Backend import db
+from modèles.User import User
+from modèles.Message import Message
+from modèles.Trip import Trip
+from modèles.Reservation import Reservation
+from routers.user_routes import user_bp
+from routers.message_routes import message_bp
+from routers.trip_routes import trip_bp
+
+app = Flask(_name_)
+
+# Configuration base MySQL
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user:password@localhost/nom_base'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Init de SQLAlchemy
+db.init_app(app)
+
+# Enregistrer les blueprints (routes)
+app.register_blueprint(user_bp)
+app.register_blueprint(message_bp)
+app.register_blueprint(trip_bp)
+
+# Créer les tables
+with app.app_context():
+    db.create_all()
+
+if _name_ == '_main_':
+    app.run(debug=True)
