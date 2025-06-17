@@ -25,13 +25,13 @@ Interface responsive : Optimisée pour mobiles et adaptée aux tablettes/ordinat
 Sécurité des données : Authentification sécurisée et protection des données personnelles
 
 ### Prérequis
-
+```
 Python 3.8+
 Flask 2.0+
-SQLAlchemy ou PyMySQL (pour la base de données)
+SQLAlchemy(pour la base de données)
 SGBD relationnel (MySQL/PostgreSQL recommandé)
 Autres dépendances listées dans requirements.txt
-
+```
 ### Installation
 
 1. Créer un dossier puis y accéder dans l'éditeur de code
