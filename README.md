@@ -66,10 +66,10 @@ source mon_env/bin/activate
 ```
 9. Configurer la base de données dans le fichier config.py ou app.py
     
-Utilisation de MySQL (recommandé) :
+### Utilisation de MySQL (recommandé) :
 
-```
-pythonimport os
+```python
+import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'votre-secret-key-ici'
@@ -78,16 +78,6 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 ```
 
-
-### Utilisation de PostgreSQL :
-
-```python 
-class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'votre-secret-key-ici'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'postgresql://your_db_user:your_db_password@localhost/ifri_comotorage_db'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-```
 7. Initialiser la base de données
 
 ```bash
