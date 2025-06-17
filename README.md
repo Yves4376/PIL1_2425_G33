@@ -40,36 +40,42 @@ Autres dépendances listées dans requirements.txt
 2. Créer et Activer un environnement virtuel
 Sous Windows :
 
-'''bash
+’’’bash 
  python -m venv mon_env
-.\mon_env\Scripts\activate
+.\mon_env\Scripts\activate’’’
 
 Sous Linux :
 
-'''bash
+’’’bash
 python3 -m venv mon_env
-source mon_env/bin/activate
+source mon_env/bin/activate’’’
 
 4. Cloner le dépôt
-bash(mon_env) https://github.com/Yves4376/PIL1_2425_G33.git
+’’’bash
+(mon_env) https://github.com/Yves4376/PIL1_2425_G33.git’’’
 5. Naviguer dans le répertoire du projet
-
-bash(mon_env) cd PIL1_2425_G33
+’’’bash
+(mon_env) cd PIL1_2425_G33’’’
 
 7. Installer les dépendances
-   
-bash(mon_env) pip install -r requirements.txt
+ ’’’bash
+(mon_env) pip install -r requirements.txt’’’
 9. Configurer la base de données dans le fichier config.py ou app.py
 Utilisation de MySQL (recommandé) :
+
+’’’
 pythonimport os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'votre-secret-key-ici'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'mysql://your_db_user:your_db_password@localhost/ifri_covoiturage_db'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-Utilisation de PostgreSQL :
-pythonclass Config:
+    SQLALCHEMY_TRACK_MODIFICATIONS = False’’’
+
+
+### Utilisation de PostgreSQL :
+python 
+class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'votre-secret-key-ici'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'postgresql://your_db_user:your_db_password@localhost/ifri_comotorage_db'
