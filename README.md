@@ -11,8 +11,6 @@ IFRI_covoiturage App
 
 
 
-
-
 ### Fonctionnalités
 
 Inscription et Connexion : Les utilisateurs peuvent s'inscrire et se connecter avec leur email/téléphone pour accéder à la plateforme
@@ -40,71 +38,95 @@ Autres dépendances listées dans requirements.txt
 2. Créer et Activer un environnement virtuel
 Sous Windows :
 
-’’’bash 
+```bash 
  python -m venv mon_env
-.\mon_env\Scripts\activate’’’
+.\mon_env\Scripts\activate
+```
 
 Sous Linux :
 
-’’’bash
+```bash
 python3 -m venv mon_env
-source mon_env/bin/activate’’’
+source mon_env/bin/activate
+```
 
 4. Cloner le dépôt
-’’’bash
-(mon_env) https://github.com/Yves4376/PIL1_2425_G33.git’’’
-5. Naviguer dans le répertoire du projet
-’’’bash
-(mon_env) cd PIL1_2425_G33’’’
+```bash
+(mon_env) https://github.com/Yves4376/PIL1_2425_G33.git
+```
+6. Naviguer dans le répertoire du projet
+```bash
+(mon_env) cd PIL1_2425_G33
+```
 
-7. Installer les dépendances
- ’’’bash
-(mon_env) pip install -r requirements.txt’’’
+8. Installer les dépendances
+```bash
+(mon_env) pip install -r requirements.txt
+```
 9. Configurer la base de données dans le fichier config.py ou app.py
 Utilisation de MySQL (recommandé) :
 
-’’’
+```
 pythonimport os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'votre-secret-key-ici'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'mysql://your_db_user:your_db_password@localhost/ifri_covoiturage_db'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False’’’
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+```
 
 
 ### Utilisation de PostgreSQL :
-python 
+
+```python 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'votre-secret-key-ici'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'postgresql://your_db_user:your_db_password@localhost/ifri_comotorage_db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+```
 7. Initialiser la base de données
 
-bash(mon_env) python app.py init-db
-
+```bash
+(mon_env) python app.py init-db
+```
 ou si vous utilisez Flask-Migrate :
-bash(mon_env) flask db init
+
+```bash
+(mon_env) flask db init
 (mon_env) flask db migrate -m "Initial migration"
 (mon_env) flask db upgrade
 8. (Optionnel) Importer des données de test
 bash(mon_env) python import_data.py
+```
 ou
-bash(mon_env) flask seed-db
+```bash
+(mon_env) flask seed-db
+```
 9. (Optionnel) Créer un utilisateur administrateur
-bash(mon_env) python create_admin.py
-10. Démarrer le serveur de développement
-bash(mon_env) python app.py
+```bash
+(mon_env) python create_admin.py
+```
+11. Démarrer le serveur de développement
+```bash
+(mon_env) python app.py
+```
 ou
-bash(mon_env) flask run
+```bash
+(mon_env) flask run
+```
 L'application sera accessible à l'adresse : http://127.0.0.1:8000/
-Utilisation
-L'application IFRI_comotorage est conçue pour être intuitive et facile d'utilisation.
-Inscription et Connexion
+
+### Utilisation
+
+L'application IFRI_covoiturage est conçue pour être intuitive et facile d'utilisation.
+
+### Inscription et Connexion
 Pour vous inscrire, cliquez sur le bouton "S'inscrire" sur la page d'accueil. Remplissez le formulaire avec vos informations personnelles (nom, prénom, email, téléphone, mot de passe) et choisissez votre rôle (conducteur ou passager). Une fois inscrit, utilisez vos identifiants (email ou téléphone) pour vous connecter.
 Profil Utilisateur
-Accédez à votre profil en cliquant sur votre photo de profil en haut à droite. Ici, vous pouvez :
+Accédez à votre profil en cliquant sur votre photo de profil en haut à droite. 
+Ici, vous pouvez :
 
 Mettre à jour vos informations personnelles
 Modifier votre point de départ habituel
@@ -113,22 +135,23 @@ Ajouter les informations de votre véhicule (si conducteur)
 Changer votre photo de profil
 Modifier votre rôle (conducteur/passager)
 
-Publication d'offres et demandes
-Pour les conducteurs :
+### Publication d'offres et demandes
+
+ #### Pour les conducteurs :
 
 Accédez à la section "Publier une offre"
 Indiquez votre point de départ et d'arrivée
 Précisez l'heure de départ et le nombre de places disponibles
 Publiez votre offre
 
-Pour les passagers :
+#### Pour les passagers :
 
 Accédez à la section "Publier une demande"
 Indiquez votre point de départ et d'arrivée souhaités
 Précisez l'heure de départ souhaitée
 Publiez votre demande
 
-Algorithme de matching
+#### Algorithme de matching
 Le système propose automatiquement des combinaisons pertinentes basées sur :
 
 La proximité géographique des trajets
@@ -136,22 +159,22 @@ La compatibilité des horaires
 Les préférences utilisateur
 
 Consultez vos suggestions dans la section "Matches recommandés".
-Messagerie instantanée
+### Messagerie instantanée
 
 Accéder à une conversation : Cliquez sur un utilisateur suggéré ou une conversation existante
 Envoyer un message : Tapez votre message dans le champ de saisie et cliquez sur "Envoyer"
 Notifications : Recevez des notifications en temps réel pour les nouveaux messages
 Historique : Accédez à l'historique de toutes vos conversations
 
-Recherche et filtres
+### Recherche et filtres
 Utilisez les fonctionnalités de recherche pour :
 
 Trouver des trajets par zone géographique
 Filtrer par horaires
 Rechercher des utilisateurs spécifiques
 
-Structure du projet
-PIL1_2425_G33
+#### Structure du projet
+```PIL1_2425_G33
 IFRI_COVOITURAGE/
 │
 ├── README.md                  # Description complète : projet, installation, usage
@@ -213,22 +236,14 @@ IFRI_COVOITURAGE/
     ├── manuel.html            # Guide utilisateur (comment utiliser l’app)
     ├── rapport.html           # Rapport technique complet (structure, BD, sécurité)
     └── postman_collection.json# Collection Postman pour tester les routes API    genere moi le code de chaque partir pour le fonctionnalité de mon application
-Équipe de développement
-Groupe [NUMERO_DU_GROUPE] :
-
-[Nom Membre 1] - [Filière] - [Rôle dans le projet]
-[Nom Membre 2] - [Filière] - [Rôle dans le projet]
-[Nom Membre 3] - [Filière] - [Rôle dans le projet]
-[Nom Membre 4] - [Filière] - [Rôle dans le projet]
-[Nom Membre 5] - [Filière] - [Rôle dans le projet]
-[Nom Membre 6] - [Filière] - [Rôle dans le projet]
+```
 
 Encadrement pédagogique :
 
-Supervision : M. Ratheil HOUNDJI
-Encadrants : M. Armand ACCROMBESSI, Mme Maryse GAHOU
+### Supervision : M. Ratheil HOUNDJI
+### Encadrants : M. Armand ACCROMBESSI et Mme Maryse GAHOU
 
-Technologies utilisées
+### Technologies utilisées
 
 Backend : Python, Flask, SQLAlchemy
 Frontend : HTML5, CSS3, JavaScript, Bootstrap/Tailwind CSS
@@ -237,34 +252,39 @@ Contrôle de version : Git, GitHub
 Algorithme de matching : Calcul de proximité géographique et compatibilité horaire
 Templating : Jinja2
 
-Récupération de mot de passe
+### Récupération de mot de passe
 Cliquez sur le lien "Mot de passe oublié ?" sur la page de connexion et suivez les instructions pour recevoir un email de récupération.
 Interface utilisateur
 [Cliquez sur ce lien pour accéder aux captures d'écran de l'interface]
-Sécurité et confidentialité
+
+#### Sécurité et confidentialité
 
 Authentification sécurisée avec hashage des mots de passe
 Protection des données personnelles selon les standards de sécurité
 Confidentialité des localisations (accès restreint aux informations nécessaires)
 Validation et assainissement des données d'entrée
 
-Déploiement
+### Déploiement
 Des instructions détaillées de déploiement sont disponibles dans le fichier DEPLOYMENT.md.
 Tests
 Pour exécuter les tests :
-bash(mon_env) python -m pytest tests/
+```bash
+(mon_env) python -m pytest tests/
+```
 ou
-bash(mon_env) python test_app.py
-Contribution
+```bash
+(mon_env) python test_app.py
+```
+### Contribution
 Ce projet est développé dans le cadre du cours "Projet Intégrateur" à l'IFRI. Pour contribuer :
 
 Créez une branche pour votre fonctionnalité
 Effectuez vos modifications
 Soumettez une pull request
 
-Licence
+### Licence
 Ce projet est développé à des fins éducatives dans le cadre de la formation à l'IFRI - Université d'Abomey-Calavi.
 
-Université d'Abomey-Calavi
-Institut de Formation et de Recherche en Informatique (IFRI)
-Projet Intégrateur L1 - 2024-2025
+### Université d'Abomey-Calavi
+### Institut de Formation et de Recherche en Informatique (IFRI)
+### Projet Intégrateur L1 - 2024-2025
