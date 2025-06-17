@@ -1,0 +1,491 @@
+/*/* style.css - IFRI Covoiturage - Design Pro */
+/* ====== RESET ET BASE ====== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", "Poppins", sans-serif;
+  }
+  
+  body {
+    background-color: #105294;
+    color: #212529;
+    min-height: 100vh;
+    min-height: 100px;
+  }
+ .logo {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  height: 60px;
+  z-index: 1000;
+  border-radius: 10px;
+
+ } 
+  /* ====== NAVBAR ====== */
+  .navbar {
+    display: block;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #0a65ee, #00b894);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #fff !important;
+    text-align: center;
+  }
+  
+  /* ====== HERO / ACCUEIL ====== */
+  .hero {
+    background-image: url('../images/background.jpg'); /* ðŸ–¼ï¸ change ici pour ta photo */
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(247, 247, 247);
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    animation: slideUp 1s ease-out;
+  }
+  
+  .hero p {
+    display: block;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    margin-inline: 110px;
+    font-size: 1.3rem;
+    max-width: 600px;
+    text-align: center;
+    text-decoration: double;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  /* ====== FORMULAIRES ====== */
+  .form-container {
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+  }
+  
+  .form-container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  
+  input, select {
+    margin-bottom: 1rem;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #f5f2f2e3;
+    width: 100%;
+    transition: 0.3s;
+  }
+  
+  input:focus, select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13,110,253,0.3);
+    outline: none;
+  }
+  
+  /* ====== BOUTONS ====== */
+  .btn-animated {
+    background-color: #0d6efd;
+    color: white;
+    
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+  .btn-animated:hover {
+    background-color: #0c4fad;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    cursor: pointer;
+  }
+  
+  /* ====== CARTE ====== */
+  #map {
+    height: 400px;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+  }
+  
+  /* ====== SECTION TITRE ====== */
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 30px 0 20px;
+    text-align: center;
+    color: #343a40;
+  }
+  
+  /* ====== FOOTER ====== */
+  footer {
+    background-color: #1c1f23;
+    color: #eee8e8;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* ====== ANIMATIONS ====== */
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @media (min-width: 768px) {
+    #background-layer {
+      width: 110px;
+      height: 110vh;
+      
+    }
+  }
+  
+/* Reset */
+
+/*.reset
+{
+     margin: 0;
+      padding: 0;
+       box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+     }
+
+
+body 
+{
+     background-color: #eef1f5;
+      color: #212529;
+       line-height: 1.6;
+     }
+
+/* Navbar */
+ /*.navbar 
+ {
+     background-color:#1b9187;
+     padding: 1rem 2rem;
+      display: flex;
+       justify-content: space-between;
+        align-items: center;
+     }
+
+.navbar-brand
+     {
+         color:#ebf3f1;
+          font-size: 1.8rem;
+           font-weight: bold;
+            text-decoration: none;
+         }
+
+*/.nav-links a 
+{
+  display: block;
+     
+     margin-inline: 100px;
+      color: rgb(245, 238, 238);
+       text-decoration: none;
+        font-weight: 500;
+        margin-top: 20px;
+        
+     }
+
+/* Hero Section */
+ .hero
+  { 
+    background: url('../images/background.jpg') center/cover no-repeat;
+     padding: 100px 20px;
+      text-align: center;
+      color: white;
+     }
+
+.hero-title { font-size: 3rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); margin-bottom: 20px; }
+
+/* Buttons */
+
+ .btn-animated
+  {
+     display: inline-block;
+     padding: 12px 25px; 
+     margin: 10px 0; 
+     background-color: #0d6efd; 
+     color: white; 
+     border: none; 
+     border-radius: 6px; 
+     font-weight: bold; 
+     cursor: pointer; 
+     transition: all 0.3s ease; 
+     text-align: center;
+     }
+
+.btn-animated:hover
+ {
+     background-color: #0056d2; 
+     transform: scale(1.05) translateY(-2px); 
+     box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+    }
+
+.btn-outline
+ { background-color: transparent;
+     color: white;
+     }
+
+.btn-large { 
+    font-size: 1.2rem;
+     padding: 15px 30px;
+     text-decoration: none;
+        font-weight: 500;
+     
+     }
+
+.btn-block
+ { 
+    width: 100%;
+     display: block;
+      margin-top: 1rem;
+     }
+
+/* Forms */
+.form-container
+ { 
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     background-color:rgba(0,0,0,0.05);
+     }
+
+.form-card
+ { 
+     background: rgba(255, 252, 252, 0.692);
+     padding: 30px;
+     width: 100%;
+     max-width: 400px;
+     box-shadow: 0 0 15px rgba(0,0,0,0.05);
+     border-radius: 10px; 
+    }
+
+.form-title {
+   font-size: 1.8rem;
+   margin-bottom: 20px;
+   color: #0d6efd;
+   text-align: center;
+     }
+
+input, select {
+   width: 100%;
+    padding: 12px;
+     margin-bottom: 15px;
+      border-radius: 6px;
+       border: 1px solid #ccc;
+    font-size: 1rem;
+       }
+
+input:focus, select:focus {
+   border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13,110,253,0.4);
+     outline: none;
+     }
+
+
+#background-animation {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100vw;
+ height: 100vh;
+ z-index: -1;
+ opacity: 0.2;
+ pointer-events: none; 
+}
+.page-bg-login {
+  background-image: url('../images/login-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.page-bg-register {
+  background-image: url('../images/register-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.page-bg-dashboard {
+  background-image: url('../images/dashboard-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-card h3 {
+  margin-bottom: 10px;
+}
+
+.dashboard-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dashboard-card li {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.dashboard-card li:last-child {
+  border-bottom: none;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #007BFF;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f6f9fc;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+main {
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+#trajetList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trajet-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-left: 5px solid #007bff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.trajet-item h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.trajet-item p {
+  margin: 5px 0;
+}
+
+.reserver-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reserver-btn:hover {
+  background-color: #218838;
+}
+
+
+

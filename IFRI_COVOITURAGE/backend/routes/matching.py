@@ -3,7 +3,7 @@ from security.auth import token_required
 from utils.db import get_db
 from security.geo_utils import haversine_distance
 
-matching_bp = Blueprint('matching', _name_)
+matching_bp = Blueprint('matching', __name__)
 
 @matching_bp.route('/trips', methods=['POST'])
 @token_required

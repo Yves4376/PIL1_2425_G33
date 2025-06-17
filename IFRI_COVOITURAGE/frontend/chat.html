@@ -1,0 +1,23 @@
+<!-- chat.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messagerie - IFRI Covoiturage</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="section-title">Messagerie</h2>
+    <div id="chatBox"></div>
+    <form id="chatForm" class="d-flex mt-3">
+      <input type="text" id="chatInput" placeholder="Message..." required />
+      <button type="submit" class="btn-animated">Envoyer</button>
+    </form>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
+

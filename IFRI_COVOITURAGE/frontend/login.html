@@ -1,0 +1,25 @@
+<!-- login.html -->
+ <!DOCTYPE html>
+ <html lang="fr">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connexion - IFRI Covoiturage</title>
+        <link rel="stylesheet" href="css/style.css">
+      </head>
+      <body class="page-bg-login">
+        <div class="form-container">
+          <form id="loginForm" class="form-card">
+            <h2 class="form-title">Se connecter</h2>
+            <input type="text" id="identifier" placeholder="Email ou Téléphone" required>
+            <input type="password" id="mot_de_passe" placeholder="Mot de passe" required>
+            <button type="submit" class="btn-animated btn-block">Connexion</button>
+            <p class="form-footer">
+              <a href="reset_password.html">Mot de passe oublié ?</a> | <a href="register.html">Créer un compte</a>
+            </p>
+            <div id="loginMessage" class="form-message"></div>
+          </form>
+        </div>
+        <script src="js/auth.js"></script>
+      </body>
+      </html>

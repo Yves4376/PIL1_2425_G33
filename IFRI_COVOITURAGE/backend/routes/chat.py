@@ -4,7 +4,7 @@ from security.auth import token_required
 from utils.db import get_db
 from app import socketio
 
-chat_bp = Blueprint('chat', _name_)
+chat_bp = Blueprint('chat', __name__)
 
 @socketio.on('join')
 def on_join(data):

@@ -1,0 +1,32 @@
+<!-- register.html -->
+ <!DOCTYPE html>
+ <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription - IFRI Covoiturage</title>
+        <link rel="stylesheet" href="css/style.css">
+      </head>
+      <body class="page-bg-register">
+        <div class="form-container">
+        
+          <form id="registerForm" class="form-card">
+            <h2 class="form-title">Créer un compte</h2>
+            <input type="text" id="nom" placeholder="Nom" required>
+            <input type="text" id="prenom" placeholder="Prénom" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="telephone" placeholder="Téléphone" required>
+            <input type="password" id="mot_de_passe" placeholder="Mot de passe" required>
+            <select id="role" required>
+              <option value="">Choisir un rôle</option>
+              <option value="conducteur">Conducteur</option>
+              <option value="passager">Passager</option>
+            </select>
+            <button type="submit" class="btn-animated btn-block">S'inscrire</button>
+            <div id="registerMessage" class="form-message"></div>
+          </form>
+        </div>
+        <script src="js/auth.js"></script>
+      </div>
+      </body>
+      </html>
