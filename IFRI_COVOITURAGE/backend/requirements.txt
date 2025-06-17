@@ -1,0 +1,9 @@
+flask==2.3.3
+flask-SQLAlchemy==3.1.1
+pyMySQL==1.1.0
+flask-Cors==4.0.0
+flask-bcrypt==1.0.1
+flask-JWT-Extended==4.6.0
+flask-Migrate==4.0.5
+email-validator==2.1.1
+python-dontenv==1.0.1

@@ -1,3 +1,4 @@
+from backend import db
 class Message:
     def _init_(self, id, match_id, contenu, expediteur_id, destinataire_id, date_envoi):
         self.id = id
