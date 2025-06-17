@@ -1,4 +1,5 @@
-Application de Covoiturage avec Flask, HTML, CSS et Javascript _____ PIL1_2425_G33
+### Application de Covoiturage avec Flask, HTML, CSS et Javascript _____ PIL1_2425_G33
+
 Contexte
 Chaque année, l'Institut de Formation et de Recherche en Informatique (IFRI) de l'Université d'Abomey-Calavi soumet un défi aux étudiants de Licence 1 en fin d'année. Le projet de cette année consiste à réaliser une application web de covoiturage qui met en relation les étudiants de l'IFRI souhaitant partager leurs trajets quotidiens entre leur domicile et le campus, développée en 2 semaines. Le développement de cette application nous a permis de mettre en œuvre et d'étendre nos connaissances du framework Flask et de sa logique. Le style de l'application a été fait à l'aide de Bootstrap/Tailwind CSS. Afin de la rendre plus facilement testable, le repository contient la base de données, la Secret Key Flask, ainsi que des informations de connexions. Les instructions de déploiement ont été rajoutées un peu plus bas sur le dépôt.
 IFRI_covoiturage App
