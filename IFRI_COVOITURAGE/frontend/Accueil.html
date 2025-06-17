@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    {% extends "base.html" %}
+
+{% block title %}Accueil - IFRI Comotorage{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h2>Bienvenue sur IFRI Comotorage</h2>
+        <p>La plateforme de covoiturage des étudiants de l'IFRI : trouvez des trajets, publiez les vôtres, et voyagez ensemble en toute sécurité.</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('publish_ride') }}" class="btn btn-primary">Publier un trajet</a>
+            <a href="{{ url_for('search_ride') }}" class="btn btn-secondary">Rechercher un trajet</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <i class="icon">👥</i>
+        <h3>Matching Intelligent</h3>
+        <p>Notre algorithme vous met en relation avec les covoitureurs compatibles selon vos horaires et trajets.</p>
+    </div>
+    <div class="feature">
+        <i class="icon">💬</i>
+        <h3>Chat Intégré</h3>
+        <p>Communiquez facilement avec vos covoitureurs grâce à notre messagerie instantanée sécurisée.</p>
+    </div>
+    <div class="feature">
+        <i class="icon">🛡️</i>
+        <h3>100% Sécurisé</h3>
+        <p>Plateforme réservée aux étudiants IFRI avec vérification d'identité et profils authentifiés.</p>
+    </div>
+</section>
+
+<section class="offres">
+    <h2>Propositions de trajets</h2>
+    {% if offres %}
+    <div class="offres-feed">
+        {% for offre in offres %}
+        <div class="offre-card">
+            <div class="offre-header">
+                <span class="lieux">{{ offre['depart'] }} → {{ offre['destination'] }}</span>
+                <span class="date">{{ offre['date_depart'] }}</span>
+            </div>
+            <div class="offre-body">
+                <p><strong>Conducteur :</strong> {{ offre['conducteur'] }}</p>
+                <p><strong>Places disponibles :</strong> {{ offre['places_disponibles'] }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Aucune offre disponible pour le moment.</p>
+    {% endif %}
+</section>
+{% endblock %}
+</body>
+</html>

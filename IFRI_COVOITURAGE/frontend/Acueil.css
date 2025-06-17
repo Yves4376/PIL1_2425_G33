@@ -1,0 +1,152 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9fb;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+/* ====== HEADER ====== */
+header {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+header img {
+  height: 50px;
+}
+
+header nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #6b21a8;
+}
+
+/* ====== HERO ====== */
+.hero {
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #6b21a8;
+}
+
+.btn-secondary {
+  background-color: #a855f7;
+}
+
+/* ====== FEATURES ====== */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.feature {
+  flex: 1 1 250px;
+  padding: 1.5rem;
+  margin: 1rem;
+  background: #f3f4f6;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.feature i.icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: #8b5cf6;
+}
+
+/* ====== OFFRES ====== */
+.offres {
+  padding: 2rem;
+}
+
+.offres h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.offres-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.offre-card {
+  background-color: #fff;
+  border-left: 4px solid #9333ea;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.offre-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #4c1d95;
+  margin-bottom: 0.5rem;
+}
+
+.offre-body p {
+  margin: 0.3rem 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media screen and (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons a {
+    display: block;
+    margin: 0.5rem auto;
+  }
+}
