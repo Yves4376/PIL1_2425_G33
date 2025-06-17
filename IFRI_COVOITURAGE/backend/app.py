@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from routes.auth import auth_bp
 from routes.chat import chat_bp, db
 from routes.matching import matching_bp
+from flask_socketio import emit
 
 from flask_cors import CORS
 
@@ -20,4 +21,4 @@ app.register_blueprint(matching_bp, url_prefix='/api')
 if __name__ == '_main_':
     app.run(debug=True)
     
-    bd.init_app(app)
+    db.init_app(app)
