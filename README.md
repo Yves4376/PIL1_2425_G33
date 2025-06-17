@@ -1,4 +1,4 @@
-### Application de Covoiturage avec Flask, HTML, CSS et Javascript _____ PIL1_2425_G33
+### Application de Covoiturage avec Flask, HTML, CSS et Javascript _ PIL1_2425_G33
 
    ### Contexte
 
@@ -36,6 +36,7 @@ Autres dépendances listées dans requirements.txt
 
 1. Créer un dossier puis y accéder dans l'éditeur de code
 2. Créer et Activer un environnement virtuel
+
 Sous Windows :
 
 ```bash 
@@ -64,6 +65,7 @@ source mon_env/bin/activate
 (mon_env) pip install -r requirements.txt
 ```
 9. Configurer la base de données dans le fichier config.py ou app.py
+    
 Utilisation de MySQL (recommandé) :
 
 ```
@@ -122,7 +124,8 @@ L'application sera accessible à l'adresse : http://127.0.0.1:8000/
 
 L'application IFRI_covoiturage est conçue pour être intuitive et facile d'utilisation.
 
-### Inscription et Connexion
+### Inscription et Connexion*
+
 Pour vous inscrire, cliquez sur le bouton "S'inscrire" sur la page d'accueil. Remplissez le formulaire avec vos informations personnelles (nom, prénom, email, téléphone, mot de passe) et choisissez votre rôle (conducteur ou passager). Une fois inscrit, utilisez vos identifiants (email ou téléphone) pour vous connecter.
 Profil Utilisateur
 Accédez à votre profil en cliquant sur votre photo de profil en haut à droite. 
@@ -152,6 +155,7 @@ Précisez l'heure de départ souhaitée
 Publiez votre demande
 
 #### Algorithme de matching
+
 Le système propose automatiquement des combinaisons pertinentes basées sur :
 
 La proximité géographique des trajets
@@ -159,6 +163,7 @@ La compatibilité des horaires
 Les préférences utilisateur
 
 Consultez vos suggestions dans la section "Matches recommandés".
+
 ### Messagerie instantanée
 
 Accéder à une conversation : Cliquez sur un utilisateur suggéré ou une conversation existante
@@ -167,6 +172,7 @@ Notifications : Recevez des notifications en temps réel pour les nouveaux messa
 Historique : Accédez à l'historique de toutes vos conversations
 
 ### Recherche et filtres
+
 Utilisez les fonctionnalités de recherche pour :
 
 Trouver des trajets par zone géographique
@@ -174,6 +180,7 @@ Filtrer par horaires
 Rechercher des utilisateurs spécifiques
 
 #### Structure du projet
+
 ```PIL1_2425_G33
 IFRI_COVOITURAGE/
 │
@@ -253,6 +260,7 @@ Algorithme de matching : Calcul de proximité géographique et compatibilité ho
 Templating : Jinja2
 
 ### Récupération de mot de passe
+
 Cliquez sur le lien "Mot de passe oublié ?" sur la page de connexion et suivez les instructions pour recevoir un email de récupération.
 Interface utilisateur
 [Cliquez sur ce lien pour accéder aux captures d'écran de l'interface]
@@ -265,17 +273,21 @@ Confidentialité des localisations (accès restreint aux informations nécessair
 Validation et assainissement des données d'entrée
 
 ### Déploiement
+
 Des instructions détaillées de déploiement sont disponibles dans le fichier DEPLOYMENT.md.
 Tests
 Pour exécuter les tests :
+
 ```bash
 (mon_env) python -m pytest tests/
 ```
 ou
+
 ```bash
 (mon_env) python test_app.py
 ```
 ### Contribution
+
 Ce projet est développé dans le cadre du cours "Projet Intégrateur" à l'IFRI. Pour contribuer :
 
 Créez une branche pour votre fonctionnalité
@@ -283,6 +295,7 @@ Effectuez vos modifications
 Soumettez une pull request
 
 ### Licence
+
 Ce projet est développé à des fins éducatives dans le cadre de la formation à l'IFRI - Université d'Abomey-Calavi.
 
 ### Université d'Abomey-Calavi
