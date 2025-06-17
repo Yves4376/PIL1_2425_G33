@@ -1,6 +1,7 @@
 ### Application de Covoiturage avec Flask, HTML, CSS et Javascript _____ PIL1_2425_G33
 
-Contexte
+   ### Contexte
+
 Chaque année, l'Institut de Formation et de Recherche en Informatique (IFRI) de l'Université d'Abomey-Calavi soumet un défi aux étudiants de Licence 1 en fin d'année. Le projet de cette année consiste à réaliser une application web de covoiturage qui met en relation les étudiants de l'IFRI souhaitant partager leurs trajets quotidiens entre leur domicile et le campus, développée en 2 semaines. Le développement de cette application nous a permis de mettre en œuvre et d'étendre nos connaissances du framework Flask et de sa logique. Le style de l'application a été fait à l'aide de Bootstrap/Tailwind CSS. Afin de la rendre plus facilement testable, le repository contient la base de données, la Secret Key Flask, ainsi que des informations de connexions. Les instructions de déploiement ont été rajoutées un peu plus bas sur le dépôt.
 IFRI_covoiturage App
 
@@ -12,7 +13,7 @@ IFRI_covoiturage App
 
 
 
-Fonctionnalités
+### Fonctionnalités
 
 Inscription et Connexion : Les utilisateurs peuvent s'inscrire et se connecter avec leur email/téléphone pour accéder à la plateforme
 Récupération de mot de passe : Les utilisateurs peuvent récupérer leurs mots de passe en cas d'oubli
@@ -25,7 +26,7 @@ Historique des conversations : Conservez et parcourez vos conversations précéd
 Interface responsive : Optimisée pour mobiles et adaptée aux tablettes/ordinateurs
 Sécurité des données : Authentification sécurisée et protection des données personnelles
 
-Prérequis
+### Prérequis
 
 Python 3.8+
 Flask 2.0+
@@ -33,19 +34,20 @@ SQLAlchemy ou PyMySQL (pour la base de données)
 SGBD relationnel (MySQL/PostgreSQL recommandé)
 Autres dépendances listées dans requirements.txt
 
-Installation
+### Installation
 
 1. Créer un dossier puis y accéder dans l'éditeur de code
 2. Créer et Activer un environnement virtuel
-3. 
 Sous Windows :
 
-bashpython -m venv mon_env
+'''bash
+ python -m venv mon_env
 .\mon_env\Scripts\activate
 
 Sous Linux :
 
-bashpython3 -m venv mon_env
+'''bash
+python3 -m venv mon_env
 source mon_env/bin/activate
 
 4. Cloner le dépôt
