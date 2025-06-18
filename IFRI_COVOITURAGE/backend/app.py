@@ -4,10 +4,14 @@ from routes.auth import auth_bp
 from routes.chat import chat_bp, db
 from routes.matching import matching_bp
 from flask_socketio import emit
+
 from routes.user_routes import user_bp
 
  
 from flask_cors import CORS
+
+
+
 
 app = Flask(__name__)
 CORS(app)
@@ -28,11 +32,13 @@ app.register_blueprint(chat_bp, url_prefix='/api')
 app.register_blueprint(matching_bp, url_prefix='/api')
 
 if __name__ == '_main_':
-    app.run(debug=True)
+   
+   
+ app.run(debug=True)
     
     
     
-    from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
 
