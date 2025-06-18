@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport de projet - IFRI_covoiturage G33</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0 auto; max-width: 900px; padding: 20px; }
+        h1, h2, h3 { color: #2c3e50; }
+        h1 { text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
+        .section { margin-bottom: 30px; }
+        .specialty { font-weight: bold; color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <h1>Rapport de projet IFRI_covoiturage<br>G33</h1>
+    
+    <div class="section">
+        <h2>1. Présentation du groupe</h2>
+        <p><strong>Nom du dépôt GitHub :</strong> <a href="https://github.com/Yves4376/PIL1_2425_G33.git" target="_blank">PIL1_2425_G33</a></p>
+        <table>
+            <tr>
+                <th>Membre</th>
+                <th>Spécialité</th>
+                <th>Rôle principal</th>
+                <th>Contribution</th>
+            </tr>
+            <tr>
+                <td>ZIKA ISSA Lamourath</td>
+                <td class="specialty">GL1</td>
+                <td>Gestion de flask_env, gitignore</td>
+                <td>Development</td>
+            </tr>
+            <tr>
+                <td>DJIMENOU Gbohounmi Tankpinou Onésime</td>
+                <td class="specialty">IA1</td>
+                <td>Gestion de la base de données et du projet</td>
+                <td>Schéma SQL, optimisation des requêtes, migrations, seed.py et documentation </td>
+            </tr>
+            <tr>
+                <td>DJOSSA Rushdane Deen Akanni Okpeloyeru Omolay o</td>
+                <td class="specialty">IA1</td>
+                <td>Backend(util, test)</td>
+                <td>Tests unitaires pour chaque module.</td>
+            </tr>
+            <tr>
+                <td>LETCHIMY Jean-Arthur Richmir</td>
+                <td class="specialty">IM1</td>
+                <td>Messagerie instantanée</td>
+                <td>Socket.IO pour le chat en temps réel, notifications</td>
+            </tr>
+            <tr>
+                <td>MENSAH Joël Junior</td>
+                <td class="specialty">SE&IoT1</td>
+                <td>Frontend(index.html, login.html, profile.html, chat.html, register.html,trajet.html, css, js) et Gestion de projet</td>
+                <td>Interfaces utilisateur (HTML/CSS/JS), responsive design et coordination</td>
+            </tr>
+            <tr>
+                <td>OKPEIFA Yves Dieudonné Olouwachinan</td>
+                <td class="specialty">SI1</td>
+                <td>Backend (Flask, route, moderle, security), Gestion de projet et Algorithme de matching</td>
+                <td>Déploiement sur Render, API REST, sécurité (JWT), intégration avec la base de données, Calcul de proximité géographique, compatibilité horaire</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>2. Fonctionnement interne</h2>
+        <h3>Outils utilisés</h3>
+        <ul>
+            <li><strong>Git/GitHub :</strong> Workflow avec branches feature/ (ex: <code>feature/messaging</code>).</li>
+           
+        </ul>
+
+       <h3>Démarche collaborative</h3>
+        <p>Chaque membre a travaillé sur sa partie en suivant le cahier des charges, avec des réunions quotidiennes pour synchroniser les avancées. Exemple de workflow :</p>
+        <ol>
+            <li>Création d'une branche Git pour une nouvelle fonctionnalité (<code>git checkout -b feature/auth</code>).</li>
+            <li>Revue de code entre pairs avant fusion (<code>git merge</code>).</li>
+            <li>Tests unitaires pour chaque module.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>3. Conception technique</h2>
+        <h3>Architecture</h3>
+        <p>L'application suit une architecture client-serveur :</p>
+        <ul>
+            <li><strong>Frontend :</strong> HTML/CSS/JS (Vanilla + Bootstrap).</li>
+            <li><strong>Backend :</strong> Flask (Python) avec Blueprints pour modularité.</li>
+            <li><strong>Base de données :</strong> PostgreSQL (schéma relationnel ci-dessous).</li>
+        </ul>
+
+        <h3>Schéma de la base de données</h3>
+        <pre><code>
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(120) UNIQUE NOT NULL,
+    password_hash VARCHAR(200) NOT NULL,
+    role VARCHAR(20) NOT NULL  -- 'driver' ou 'passenger'
+);
+
+CREATE TABLE trips (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    departure_point GEOGRAPHY(POINT),
+    departure_time TIMESTAMP
+);
+        </code></pre>
+
+        <h3>Algorithme de matching</h3>
+        <p>Utilisation de la distance haversine pour calculer la proximité géographique entre conducteurs et passagers.</p>
+        <pre><code>
+def calculate_distance(lat1, lon1, lat2, lon2):
+    # Implémentation de la formule haversine
+    return distance_km
+        </code></pre>
+    </div>
+
+
+     <div class="section">
+        <h2>4. Déploiement</h2>
+        <h3>Environnement de production</h3>
+        <p>L'application est déployée sur Render : <a href="https://ifri-covoiturage.onrender.com" target="_blank">Lien vers l'application</a>.</p>
+        <p>Configuration requise :</p>
+        <ul>
+            <li>Python 3.9+</li>
+            <li>PostgreSQL</li>
+            <li>Variables d'environnement (ex: <code>DATABASE_URL</code>, <code>SECRET_KEY</code>).</li>
+        </ul>
+
+        <h3>Instructions pour un déploiement local</h3>
+        <pre><code>
+         # Cloner le dépôt
+         git clone https://github.com/Yves4376/PIL1_2425_G33.git
+
+         # Lancer les containers Docker
+         docker-compose up -d
+
+          # Accéder à l'application
+          http://localhost:5000
+        </code></pre>
+    </div>
+
+<div class="section">
+        <h2>5. Manuel d'utilisation</h2>
+        <h3>Inscription et connexion</h3>
+        <ol>
+            <li>Remplir le formulaire d'inscription (email, nom, prenoms, mot de passe, rôle).</li>
+            <li>Se connecter avec ses identifiants.</li>
+        </ol>
+
+        <h3>Publication d'un trajet</h3>
+        <p>Les conducteurs peuvent publier une offre en spécifiant :</p>
+        <ul>
+            <li>Point de départ (saisie d'adresse ou carte interactive).</li>
+            <li>Heure de départ.</li>
+            <li>Nombre de places disponibles.</li>
+        </ul>
+
+        <h3>Messagerie</h3>
+        <p>Un bouton "Contacter" dans les résultats de matching ouvre une conversation en temps réel.</p>
+    </div>
+
+     <div class="section">
+        <h2>6. Conclusion</h2>
+        <p>Le projet a permis de mettre en pratique les compétences acquises en première année, notamment :</p>
+        <ul>
+            <li>Collaboration avec Git/GitHub.</li>
+            <li>Conception d'une base de données relationnelle.</li>
+            <li>Développement full-stack (Flask + HTML/JS).</li>
+        </ul>
+    </div>
+
+</body>
+</html>
