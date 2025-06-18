@@ -42,3 +42,26 @@ document.getElementById('publishForm').addEventListener('submit', async function
 });
 
 
+
+fetch('http://localhost:5000/api/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: 'test@gmail.com', password: '1234' })
+  })
+  .then(res => res.json())
+  .then(data => console.log('Réponse:', data))
+  .catch(err => console.error('Erreur:', err));
+
+
+  function publishTrip(departure, destination, date) {
+    fetch('http://localhost:5000/api/trips', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+      },
+      body: JSON.stringify({ departure, destination, date })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+  }

@@ -33,3 +33,5 @@ class Trip:
         self.date_trajet = date_trajet
         self.heure_depart = heure_depart
         self.places_disponibles = places_disponibles
+
+

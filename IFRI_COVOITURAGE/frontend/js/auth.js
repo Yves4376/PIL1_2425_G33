@@ -41,6 +41,7 @@ async function register(userData) {
     }
 }
 
+<<<<<<< HEAD
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('login-form');
@@ -69,3 +70,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+=======
+fetch('http://localhost:5000/api/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: 'test@gmail.com', password: '1234' })
+  })
+  .then(res => res.json())
+  .then(data => console.log('Réponse:', data))
+  .catch(err => console.error('Erreur:', err));
+
+  function loginUser(email, password) {
+    fetch('http://localhost:5000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+      localStorage.setItem('token', data.token);
+      alert("Connecté !");
+    });
+  }
+>>>>>>> a75dee7 (Résolution de conflits et ajout de fonctionnalités)
