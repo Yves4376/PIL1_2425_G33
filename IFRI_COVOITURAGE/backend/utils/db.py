@@ -1,1 +1,1 @@
-app.cofig['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/covoiturage'
+app.cofig['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/ifri'
