@@ -29,3 +29,31 @@ fetch('http://localhost:5000/api/login', {
   .then(res => res.json())
   .then(data => console.log('Réponse:', data))
   .catch(err => console.error('Erreur:', err));
+
+
+  // Envoi des critères de recherche au backend
+async function searchTrips(departureCoords, arrivalCoords, departureTime) {
+    const response = await fetch('/api/matching/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`  // JWT
+        },
+        body: JSON.stringify({
+            departure: departureCoords,
+            arrival: arrivalCoords,
+            time: departureTime
+        })
+    });
+    return await response.json();
+}
+
+// Exemple d'appel depuis le HTML
+document.getElementById('search-btn').addEventListener('click', async () => {
+    const trips = await searchTrips(
+        [6.3725, 2.3580],  // Calavi (exemple)
+        [6.3695, 2.3620],  // Campus (exemple)
+        "08:00"
+    );
+    displayTrips(trips);  // Afficher les résultats dans le HTML
+});

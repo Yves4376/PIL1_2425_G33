@@ -1,26 +1,14 @@
 from flask import Blueprint, request, jsonify
-from flask_socketio import emit
 from security.auth import token_required
 from utils.db import get_db
 from app import socketio
-from flask import Blueprint, request, jsonify
-from models.message import Message
-from extensions import db
+from flask_socketio import SocketIO, emit, join_room
+from flask import request
+from models.user import User
 
-chat_bp = Blueprint('chat_bp', __name__)
+socketio = SocketIO(cors_allowed_origins="*")
 
-@chat_bp.route('/api/messages', methods=['POST'])
-def send_message():
-    data = request.get_json()
-    message = Message(sender_id=data['sender_id'], receiver_id=data['receiver_id'], content=data['content'])
-    db.session.add(message)
-    db.session.commit()
-    return jsonify({'message': 'Message envoyé !'}), 201
 
-@chat_bp.route('/api/messages/<int:user_id>', methods=['GET'])
-def get_messages(user_id):
-    messages = Message.query.filter_by(receiver_id=user_id).all()
-    return jsonify([m.to_dict() for m in messages])
 chat_bp = Blueprint('chat', __name__)
 
 @socketio.on('join')
@@ -90,5 +78,3 @@ def delete_message(message_id):
     db.session.delete(message)
     db.session.commit()
     return jsonify({'message': 'Message supprimé'})
-
-

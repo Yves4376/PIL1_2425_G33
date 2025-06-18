@@ -6,7 +6,7 @@ from routes.matching import matching_bp
 from flask_socketio import emit
 
 from routes.user_routes import user_bp
-
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # À restreindre en production
  
 from flask_cors import CORS
 

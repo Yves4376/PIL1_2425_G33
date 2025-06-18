@@ -57,5 +57,19 @@ fetch('http://localhost:5000/api/login', {
 
 
 
+const socket = io('https://ifri-covoiturage.onrender.com', {  // URL de déploiement
+    auth: {
+        token: localStorage.getItem('token')  // JWT pour authentification
+    }
+});
 
+// Rejoindre un trajet spécifique
+function joinTrip(tripId) {
+    socket.emit('join_trip', tripId);
+}
+
+// Écouter les messages
+socket.on('message', (data) => {
+    console.log('Message reçu:', data.text);
+});
 
