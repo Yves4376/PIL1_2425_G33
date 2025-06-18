@@ -11,7 +11,8 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})  # À restreindre en producti
 from flask_cors import CORS
 
 
-
+from flask import current_app
+db.init_app(current_app)
 
 app = Flask(__name__)
 CORS(app)
