@@ -4,6 +4,7 @@ import jwt
 import datetime
 from security.auth import token_required
 from utils.db import get_db
+from utils.password import check_password
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -33,3 +34,4 @@ def login():
                            key='votre_clé_secrète', algorithm='HS256')
         return jsonify({'token': token})
     return jsonify({'error': 'Identifiants incorrects'}), 401
+
