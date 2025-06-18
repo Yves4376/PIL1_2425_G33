@@ -16,12 +16,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 app.config['SECRET_KEY'] = 'votre_clé_secrète'
-app.cofig['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user:password@localhost/'
-db = SQLAlchemy(app)
-db.init_app(app)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/ifri_covoiturage'
+app.cofig['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user:password@localhost/nom_base'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
 
 
@@ -107,7 +102,7 @@ from routes.chat import chat_bp
 from routes.matching import matching_bp
 
 def create_app():
-    app = Flask(_name_)
+    app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost:3306/nom_de_ta_db'
     app.config['JWT_SECRET_KEY'] = 'secret-key'
     

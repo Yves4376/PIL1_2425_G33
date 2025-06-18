@@ -2,7 +2,20 @@ from flask import Blueprint, request, jsonify
 from security.auth import token_required
 from utils.db import get_db
 from security.geo_utils import haversine_distance
+from flask import Blueprint, request, jsonify
+from models.trip import Trip
+from models.user import User
+from extensions import db
 
+matching_bp = Blueprint('matching_bp', __name__)
+chat_bp = Blueprint('chat_bp', __name__)
+
+@matching_bp.route('/api/match', methods=['POST'])
+def match():
+    data = request.get_json()
+    # Logique fictive
+    trips = Trip.query.filter_by(destination=data['destination']).all()
+    return jsonify([trip.to_dict() for trip in trips])
 matching_bp = Blueprint('matching', __name__)
 
 @matching_bp.route('/trips', methods=['POST'])

@@ -30,3 +30,6 @@ class User:
         self.telephone = telephone
         self.mot_de_passe = mot_de_passe
         self.role = role
+
+db.session.add(new_user)
+db.session.commit()

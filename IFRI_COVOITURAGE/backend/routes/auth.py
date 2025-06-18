@@ -7,6 +7,7 @@ from utils.db import get_db
 from utils.password import check_password
 
 auth_bp = Blueprint('auth', __name__)
+chat_bp = Blueprint('chat_bp', __name__)
 
 @auth_bp.route('/register', methods=['POST'])
 def register():
